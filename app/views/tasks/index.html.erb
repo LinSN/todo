@@ -1,0 +1,15 @@
+<h1>C'est ma todo liiiisssssstttt</h1>
+
+<%= flash[:notice]%>
+
+<%= link_to 'New Task', new_task_path %>
+
+<% @tasks.each do |t| %>
+  <h2>Task <%= t.id%></h2>
+  <h5>Name: <%= t.name %></h5>
+  <h5>Description: <%=  t.description %></h5>
+  <h5>Priority: <%= t.priority %></h5>
+  <%= link_to 'Edit', edit_task_path(t.id) %>
+  <%= link_to 'Explore', task_path(t.id) %>
+  <%= link_to 'Delete', task_path(t.id), method: :delete %>
+<% end %>

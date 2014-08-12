@@ -1,0 +1,9 @@
+<%= flash[:notice]%>
+
+<h2>Task <%= @task.id%></h2>
+  <h5>Name: <%= @task.name %></h5>
+  <h5>Description: <%=  @task.description %></h5>
+  <h5>Priority: <%= @task.priority %></h5>
+  <%= link_to 'Edit', edit_task_path(@task.id) %>
+  <%= link_to 'Accueil', tasks_path %>
+  <%= link_to 'Delete', task_path(@task.id), method: :delete %>
